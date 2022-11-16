@@ -1,0 +1,15 @@
+// Font weight variables
+$light: 300;
+$normal: 400;
+$semibold: 600;
+$bold: 700;
+
+@mixin font-light($fontSize, $fontOpacity) {
+  @include base-font;
+  font-weight: $light;
+  font-size: fontSize($fontSize);
+  opacity: fontOpacity($fontOpacity);
+}
+@mixin base-font{
+  color: $black;
+}
