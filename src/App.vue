@@ -1,15 +1,20 @@
 <template>
   <div class="app-wrapper">
     <div class="app">
+      <Navigation />
       <router-view />
+      <Footer />
     </div>
   </div>
 </template>
 
 <script>
+import Navigation from '@/components/NavigationBar'
+import Footer from '@/components/FooterBar'
+
 export default {
   name: 'app',
-  components: {},
+  components: { Navigation, Footer },
   data () {
     return {}
   },

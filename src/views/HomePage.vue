@@ -7,10 +7,6 @@
 </template>
 
 <style lang="scss" scoped>
-@import '@/assets/main';
-.game {
-  @include font-light(16px, 1)
-}
 </style>
 
-<script src="./js/demopage.js"></script>
+<script src="./js/home-page.js"></script>
