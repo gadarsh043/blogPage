@@ -1,0 +1,76 @@
+<template>
+    <div class="reset-password">
+      <Modal v-if="modalActive" :modalMessage="modalMessage" @close-modal="closeModal" />
+      <Loading v-if="loading" />
+      <div class="form-wrap">
+        <form class="reset">
+          <p class="login-register">
+            Back to
+            <router-link class="router-link" :to="{ name: 'Login' }">Login</router-link>
+          </p>
+          <h2>Reset Password</h2>
+          <p>Forgot your password? Enter your email to reset it</p>
+          <div class="inputs">
+            <div class="input">
+              <input type="text" placeholder="Email" v-model="email" />
+              <email class="icon" />
+            </div>
+          </div>
+          <button @click.prevent="resetPassword">Reset</button>
+          <div class="angle"></div>
+          <div class="h-angle"></div>
+          <div class="angle2"></div>
+        </form>
+        <div class="background"></div>
+      </div>
+    </div>
+</template>
+
+<script>
+import email from '@/assets/Icons/envelope-regular.svg'
+import Modal from '@/components/ModalDiv'
+import Loading from '@/components/LoadingPage'
+
+export default {
+  name: 'ForgotPassword',
+  data () {
+    return {
+      email: '',
+      modalActive: false,
+      modalMessage: '',
+      loading: null
+    }
+  },
+  components: {
+    email,
+    Modal,
+    Loading
+  },
+  methods: {
+    resetPassword () {
+      console.log('reset')
+    },
+    closeModal () {
+      this.modalActive = !this.modalActive
+      this.email = ''
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.reset-password {
+  position: relative;
+  .form-wrap {
+    .reset {
+      h2 {
+        margin-bottom: 8px;
+      }
+      p {
+        text-align: center;
+        margin-bottom: 32px;
+      }
+    }
+  }
+}
+</style>
