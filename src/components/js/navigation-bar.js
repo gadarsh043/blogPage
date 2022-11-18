@@ -2,6 +2,7 @@ import menuIcon from '@/assets/Icons/bars-regular.svg'
 import userIcon from '@/assets/Icons/user-alt-light.svg'
 import adminIcon from '@/assets/Icons/user-crown-light.svg'
 import signOutIcon from '@/assets/Icons/sign-out-alt-regular.svg'
+import logOut from '@/assets/log-out.png'
 import firebase from 'firebase/app'
 import 'firebase/auth'
 
@@ -10,6 +11,7 @@ export default {
   components: { menuIcon, userIcon, adminIcon, signOutIcon },
   data () {
     return {
+      logOut,
       profileMenu: null,
       mobile: null,
       mobileNav: null,
@@ -34,7 +36,7 @@ export default {
       this.mobileNav = !this.mobileNav
     },
     toggleProfileMenu (e) {
-      if (e.target === this.$refs.profile) {
+      if (e.target === this.$refs.profile && this.admin) {
         this.profileMenu = !this.profileMenu
       }
     },

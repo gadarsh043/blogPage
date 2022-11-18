@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="home">
-      <BlogPost :post="welcomeScreen" />
+      <BlogPost v-if="!user" :post="welcomeScreen" />
       <BlogPost :post="post" v-for="post in blogPostsFeed" :key="post.id" />
     </div>
     <div class="blog-card-wrap">
@@ -15,7 +15,7 @@
     <div v-if="!user" class="updates">
       <div class="container">
         <h2>Never miss my update!</h2>
-        <router-link class="router-button" to="#"> Register to <span class="bold">"Akarsh's Page"</span> <Arrow class="arrow arrow-light" /> </router-link>
+        <router-link class="router-button" :to="{ name: 'Login' }"> Register to <span class="bold">"Akarsh's Page"</span> <Arrow class="arrow arrow-light" /> </router-link>
       </div>
     </div>
   </div>

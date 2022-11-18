@@ -53,6 +53,15 @@ const routes = [
       title: 'Forgot Password',
       requiresAuth: false
     }
+  },
+  {
+    path: '/register/create-admin',
+    name: 'RegisterAdmin',
+    component: Register,
+    meta: {
+      title: 'Create Admin',
+      requiresAuth: false
+    }
   }
 ]
 

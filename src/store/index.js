@@ -64,6 +64,7 @@ export default new Vuex.Store({
       state.profileFirstName = doc.data().firstName
       state.profileLastName = doc.data().lastName
       state.profileUsername = doc.data().username
+      state.profileAdmin = doc.data().admin
     },
     setProfileInitials (state) {
       state.profileInitials = state.profileFirstName.match(/(\b\S)?/g).join('') + state.profileLastName.match(/(\b\S)?/g).join('')

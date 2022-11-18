@@ -1,11 +1,12 @@
 <template>
     <div class="form-wrap">
       <form class="register">
-        <p class="login-register">
+        <p class="login-register" v-if="this.createAdmin !== 'create-admin'">
           Already have an account?
           <router-link class="router-link" :to="{ name: 'Login' }">Login</router-link>
         </p>
-        <h2>Create Your Account</h2>
+        <h2 v-if="this.createAdmin !== 'create-admin'">Create Your Account</h2>
+        <h2 v-else>Create Admin Account</h2>
         <div class="inputs">
           <div class="input">
             <input type="text" placeholder="First Name" v-model="firstName" />
@@ -29,7 +30,7 @@
           </div>
           <div v-show="error" class="error">{{ this.errorMsg }}</div>
         </div>
-        <button @click.prevent="register">Sign Up</button>
+        <button @click.prevent="register">{{this.createAdmin === 'create-admin' ? 'Create Account' : 'Sign Up'}}</button>
         <div class="angle"></div>
         <div class="h-angle"></div>
         <div class="angle2"></div>
@@ -61,7 +62,13 @@ export default {
       email: '',
       password: '',
       error: null,
-      errorMsg: ''
+      errorMsg: '',
+      createAdmin: this.$route.path.split('/').slice(-1)[0]
+    }
+  },
+  created () {
+    if (this.createAdmin === 'create-admin' && !this.admin) {
+      this.$router.push({ name: 'Home' })
     }
   },
   methods: {
@@ -83,13 +90,19 @@ export default {
           firstName: this.firstName,
           lastName: this.lastName,
           username: this.username,
-          email: this.email
+          email: this.email,
+          admin: this.createAdmin === 'create-admin'
         })
         this.$router.push({ name: 'Home' })
         return
       }
       this.error = true
       this.errorMsg = 'Please fill out all the fields!'
+    }
+  },
+  computed: {
+    admin () {
+      return this.$store.state.profileAdmin
     }
   }
 }

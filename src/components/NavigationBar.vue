@@ -11,8 +11,11 @@
           <router-link class="link" to="#">Create Post</router-link>
           <router-link v-if="!user" class="link" :to="{ name: 'Login' }">Login/Register</router-link>
         </ul>
-        <div v-if="user" :class="{ 'mobile-user-menu': mobile }" @click="toggleProfileMenu" class="profile" ref="profile">
-          <span>{{ this.$store.state.profileInitials }}</span>
+        <div v-if="user" :class="{ 'mobile-user-menu': mobile, 'no-admin': !admin }" @click="admin ? toggleProfileMenu($event) : signOut()" class="profile" ref="profile">
+          <span v-if="admin">{{ this.$store.state.profileInitials }}</span>
+          <span v-else class="logout">
+            <img :src="logOut" alt="LogOut" class="logout-img">
+          </span>
           <div v-show="profileMenu" class="profile-menu">
             <div class="info">
               <p class="initials">{{ this.$store.state.profileInitials }}</p>
@@ -23,16 +26,10 @@
               </div>
             </div>
             <div class="options">
-              <div class="option">
-                <router-link class="option" to="#">
-                  <userIcon class="icon" />
-                  <p>Profile</p>
-                </router-link>
-              </div>
               <div v-if="admin" class="option">
-                <router-link class="option" to="#">
+                <router-link class="option" :to="{name : 'RegisterAdmin'}">
                   <adminIcon class="icon" />
-                  <p>Admin</p>
+                  <p>Create Admin</p>
                 </router-link>
               </div>
               <div @click="signOut" class="option">
@@ -108,7 +105,7 @@ header {
         }
       }
 
-      .profile {
+      .profile, .no-admin {
         position: relative;
         cursor: pointer;
         display: flex;
@@ -187,6 +184,18 @@ header {
                 margin-bottom: 0px;
               }
             }
+          }
+        }
+      }
+      .no-admin {
+        background-color: white;
+        .logout {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &-img {
+            width: 80%;
+            height: 80%;
           }
         }
       }
