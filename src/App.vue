@@ -23,13 +23,12 @@ export default {
     }
   },
   created () {
-    // firebase.auth().onAuthStateChanged((user) => {
-    //   this.$store.commit('updateUser', user)
-    //   if (user) {
-    //     this.$store.dispatch('getCurrentUser', user)
-    //   }
-    // })
-    console.log(firebase.auth().currentUser.uid)
+    firebase.auth().onAuthStateChanged((user) => {
+      this.$store.commit('updateUser', user)
+      if (user) {
+        this.$store.dispatch('getCurrentUser', user)
+      }
+    })
     this.checkRoute()
   },
   mounted () {},
