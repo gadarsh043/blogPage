@@ -35,7 +35,7 @@ export default new Vuex.Store({
       }
     ],
     editPost: null,
-    user: false
+    user: null
   },
   getters: {
     blogPostsFeed: state => state.blogPostsFeed,

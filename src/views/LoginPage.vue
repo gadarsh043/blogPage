@@ -5,7 +5,7 @@
           Don't have an account?
           <router-link class="router-link" :to="{ name: 'Register' }">Register</router-link>
         </p>
-        <h2>Login to Akarsh's Blogs</h2>
+        <h2>Login to Akarsh's Page</h2>
         <div class="inputs">
           <div class="input">
             <input type="text" placeholder="Email" v-model="email" />
@@ -32,6 +32,8 @@
 <script>
 import email from '@/assets/Icons/envelope-regular.svg'
 import password from '@/assets/Icons/lock-alt-solid.svg'
+import firebase from 'firebase/app'
+import 'firebase/auth'
 export default {
   name: 'LoginPage',
   components: {
@@ -48,7 +50,19 @@ export default {
   },
   methods: {
     signIn () {
-      console.log('login')
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(this.email, this.password)
+        .then(() => {
+          this.$router.push({ name: 'Home' })
+          this.error = false
+          this.errorMsg = ''
+          console.log(firebase.auth().currentUser.uid)
+        })
+        .catch((err) => {
+          this.error = true
+          this.errorMsg = err.message
+        })
     }
   }
 }
