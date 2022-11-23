@@ -11,7 +11,7 @@
           <router-link class="link" to="#">Create Post</router-link>
           <router-link v-if="!user" class="link" :to="{ name: 'Login' }">Login/Register</router-link>
         </ul>
-        <div v-if="user && admin !== null" :class="{ 'mobile-user-menu': mobile, 'no-admin': !admin }" @click="admin ? toggleProfileMenu($event) : signOut()" class="profile" ref="profile" v-click-outside="clickedOutside">
+        <div v-if="user && admin !== null" :class="{ 'mobile-user-menu': mobile, 'no-admin': !admin }" @click="admin ? toggleProfileMenu($event) : signOut()" class="profile" ref="profile" v-click-outside="clickedOutside" @mouseover="toolTip = true" @mouseleave="toolTip = false">
           <span v-if="admin">{{ this.$store.state.profileInitials }}</span>
           <span v-else class="logout">
             <img :src="logOut" alt="LogOut" class="logout-img">
@@ -44,6 +44,7 @@
               </div>
             </div>
           </div>
+          <div v-show="toolTip && !mobile" class="tooltip" :class="{'tooltip-hover': profileMenu}">{{admin ? 'Profile': 'Logout'}}</div>
         </div>
       </div>
     </nav>
@@ -254,6 +255,27 @@ header {
 
   .mobile-nav-leave-to {
     transform: translateX(-250px);
+  }
+}
+.tooltip {
+  display: flex;
+  position: absolute;
+  top: 40px;
+  right: 35px;
+  width: 55px;
+  justify-content: center;
+  background-color: white;
+  color: #303030;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
+  border-radius: 5px;
+  border: 1px solid #303030;
+  &-hover {
+    top: 65px;
+    color: white;
+    z-index: 100;
+    right: 9px;
+    background-color: #303030;
+    border: 1px solid white;
   }
 }
 </style>

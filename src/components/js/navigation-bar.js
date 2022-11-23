@@ -15,7 +15,8 @@ export default {
       profileMenu: null,
       mobile: null,
       mobileNav: null,
-      windowWidth: null
+      windowWidth: null,
+      toolTip: null
     }
   },
   created () {
@@ -45,7 +46,7 @@ export default {
       window.location.reload()
     },
     clickedOutside () {
-      this.profileMenu = !this.profileMenu
+      this.profileMenu = false
     }
   },
   computed: {
