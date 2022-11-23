@@ -2,7 +2,7 @@
   <header>
     <nav class="container">
       <div class="branding">
-        <router-link class="header" :to="{ name : 'Home' }" >Akarsh's Page</router-link>
+        <router-link class="header" :to="{ name : 'Home' }">Akarsh's Page</router-link>
       </div>
       <div class="nav-links">
         <ul v-show="!mobile">
@@ -11,7 +11,7 @@
           <router-link class="link" to="#">Create Post</router-link>
           <router-link v-if="!user" class="link" :to="{ name: 'Login' }">Login/Register</router-link>
         </ul>
-        <div v-if="user" :class="{ 'mobile-user-menu': mobile, 'no-admin': !admin }" @click="admin ? toggleProfileMenu($event) : signOut()" class="profile" ref="profile">
+        <div v-if="user && admin !== null" :class="{ 'mobile-user-menu': mobile, 'no-admin': !admin }" @click="admin ? toggleProfileMenu($event) : signOut()" class="profile" ref="profile" v-click-outside="clickedOutside">
           <span v-if="admin">{{ this.$store.state.profileInitials }}</span>
           <span v-else class="logout">
             <img :src="logOut" alt="LogOut" class="logout-img">
@@ -27,10 +27,16 @@
             </div>
             <div class="options">
               <div v-if="admin" class="option">
-                <router-link class="option" :to="{name : 'RegisterAdmin'}">
+                <a class="option" :href="$router.resolve({name: 'CreateAdmin'}).href">
                   <adminIcon class="icon" />
                   <p>Create Admin</p>
-                </router-link>
+                </a>
+              </div>
+              <div v-if="admin" class="option">
+                <a class="option" :href="$router.resolve({name: 'DeleteAdmin'}).href">
+                  <adminIcon class="icon" />
+                  <p>Delete Admin</p>
+                </a>
               </div>
               <div @click="signOut" class="option">
                 <signOutIcon class="icon" />

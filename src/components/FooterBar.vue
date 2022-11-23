@@ -3,19 +3,13 @@
       <div class="container">
         <div class="left">
           <div class="col-1">
-            <router-link class="header" to="#">Akarsh's Page</router-link>
+            <router-link class="header"  :to="{ name : 'Home' }">Akarsh's Page</router-link>
             <ul>
               <li>
-                <a href="#"><youTube class="svg-icon"/></a>
+                <a href="https://www.youtube.com/channel/UCyUfxigRnziODg6KsfNn1Cg"><youTube class="svg-icon"/></a>
               </li>
               <li>
-                <a href="#"><twitter class="svg-icon"/></a>
-              </li>
-              <li>
-                <a href="#"><instagram class="svg-icon"/></a>
-              </li>
-              <li>
-                <a href="#"><linkedin class="svg-icon"/></a>
+                <a href="https://www.instagram.com/akarsh_x05/"><instagram class="svg-icon"/></a>
               </li>
             </ul>
           </div>

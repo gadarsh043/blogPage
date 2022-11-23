@@ -43,6 +43,9 @@ export default {
     signOut () {
       firebase.auth().signOut()
       window.location.reload()
+    },
+    clickedOutside () {
+      this.profileMenu = !this.profileMenu
     }
   },
   computed: {

@@ -5,6 +5,7 @@ import Blogs from '../views/BlogPage.vue'
 import Login from '../views/LoginPage.vue'
 import Register from '../views/RegisterPage.vue'
 import ForgotPassword from '../views/ForgotPassword.vue'
+import Admin from '../views/AdminCreatePage.vue'
 
 Vue.use(VueRouter)
 
@@ -55,9 +56,18 @@ const routes = [
     }
   },
   {
-    path: '/register/create-admin',
-    name: 'RegisterAdmin',
-    component: Register,
+    path: '/create-admin',
+    name: 'CreateAdmin',
+    component: Admin,
+    meta: {
+      title: 'Create Admin',
+      requiresAuth: false
+    }
+  },
+  {
+    path: '/delete-admin',
+    name: 'DeleteAdmin',
+    component: Admin,
     meta: {
       title: 'Create Admin',
       requiresAuth: false
