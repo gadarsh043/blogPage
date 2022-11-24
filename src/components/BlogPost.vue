@@ -9,14 +9,14 @@
           <router-link class="link link-light" v-if="post.welcomeScreen" :to="{ name: 'Login' }">
             Login/Register<Arrow class="arrow arrow-light" />
           </router-link>
-          <router-link class="link" v-else to="#">
+          <router-link class="link" v-else :to="{ name: 'ViewBlog', params: { blogid: this.post.blogID } }">
             View The Post<Arrow class="arrow" />
           </router-link>
         </div>
       </div>
       <div class="blog-photo">
         <img v-if="post.welcomeScreen" :src="require(`@/assets/blogPhotos/${post.photo}.jpg`)" alt="" />
-        <img v-else :src="require(`@/assets/blogPhotos/${post.blogCoverPhoto}.jpg`)" alt="" />
+        <img v-else :src="post.blogCoverPhoto" alt="" />
       </div>
     </div>
   </template>

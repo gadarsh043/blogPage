@@ -8,7 +8,7 @@
         <ul v-show="!mobile">
           <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
           <router-link class="link" :to="{ name: 'Blogs' }">Blogs</router-link>
-          <router-link class="link" to="#">Create Post</router-link>
+          <a v-if="admin" class="link" :href="$router.resolve({name: 'CreatePost'}).href"> Create Post </a>
           <router-link v-if="!user" class="link" :to="{ name: 'Login' }">Login/Register</router-link>
         </ul>
         <div v-if="user && admin !== null" :class="{ 'mobile-user-menu': mobile, 'no-admin': !admin }" @click="admin ? toggleProfileMenu($event) : signOut()" class="profile" ref="profile" v-click-outside="clickedOutside" @mouseover="toolTip = true" @mouseleave="toolTip = false">
@@ -53,8 +53,8 @@
       <ul class="mobile-nav" v-show="mobileNav">
         <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
         <router-link class="link" :to="{ name: 'Blogs' }">Blogs</router-link>
-        <router-link class="link" to="#">Create Post</router-link>
-          <router-link v-if="!user" class="link" :to="{ name: 'Login' }">Login/Register</router-link>
+        <a v-if="admin" class="link" :href="$router.resolve({name: 'CreatePost'}).href"> Create Post </a>
+        <router-link v-if="!user" class="link" :to="{ name: 'Login' }">Login/Register</router-link>
       </ul>
     </transition>
   </header>

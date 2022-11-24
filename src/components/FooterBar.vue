@@ -17,7 +17,7 @@
             <ul>
               <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
               <router-link class="link" :to="{ name: 'Blogs' }">Blogs</router-link>
-              <router-link class="link" to="#">Create Post</router-link>
+              <a v-if="admin" class="link" :href="$router.resolve({name: 'CreatePost'}).href"> Create Post </a>
               <router-link v-if="!user" class="link" :to="{ name: 'Login' }">Login/Register</router-link>
             </ul>
           </div>
