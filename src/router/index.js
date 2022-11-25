@@ -10,6 +10,7 @@ import CreatePost from '../views/CreatePost.vue'
 import BlogPreview from '../views/BlogPreview.vue'
 import ViewBlog from '../views/ViewBlog.vue'
 import EditBlog from '../views/EditBlog.vue'
+import ErrorPage from '../views/ErrorPage.vue'
 
 Vue.use(VueRouter)
 
@@ -113,6 +114,16 @@ const routes = [
       title: 'Edit Blog Post',
       requiresAuth: true,
       requiresAdmin: true
+    }
+  },
+  {
+    path: '/*',
+    name: '404 error',
+    component: ErrorPage,
+    meta: {
+      title: 'Error Page',
+      requiresAuth: false,
+      requiresAdmin: false
     }
   }
 ]
