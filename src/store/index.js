@@ -13,6 +13,7 @@ export default new Vuex.Store({
     blogHTML: 'Write your thoughts here...',
     blogTitle: '',
     blogPhotoName: '',
+    blogCoverPhoto: null,
     blogPhotoFileURL: null,
     blogPhotoPreview: null,
     editPost: null,
@@ -42,6 +43,9 @@ export default new Vuex.Store({
     },
     fileNameChange (state, payload) {
       state.blogPhotoName = payload
+    },
+    storeFile (state, payload) {
+      state.blogCoverPhoto = payload
     },
     createFileURL (state, payload) {
       state.blogPhotoFileURL = payload

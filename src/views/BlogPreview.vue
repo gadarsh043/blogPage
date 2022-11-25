@@ -1,6 +1,12 @@
 <template>
     <div class="post-view">
       <div class="container quillWrapper">
+        <button class="preview">
+          <router-link :to="{name : 'CreatePost'}" class="back-to-create">
+            Back to create <Arrow class="arrow arrow-light" />
+          </router-link>
+        </button>
+        <br>
         <h2>{{ this.blogTitle }}</h2>
         <img :src="blogCoverPhoto" alt="" />
         <div class="post-content ql-editor" v-html="blogHTML"></div>
@@ -9,8 +15,10 @@
   </template>
 
 <script>
+import Arrow from '@/assets/Icons/arrow-right-light.svg'
 export default {
   name: 'PostPreview',
+  components: { Arrow },
   computed: {
     blogTitle () {
       return this.$store.state.blogTitle
@@ -48,5 +56,9 @@ export default {
       width: 100%;
       margin-bottom: 32px;
     }
+  }
+  .back-to-create {
+    color: white;
+    text-decoration: none;
   }
   </style>
