@@ -1,4 +1,6 @@
-# NotePad
+# Blog
+
+You can try this in https://g-akarsh-monu.netlify.app/
 
 ## Project setup
 ```
