@@ -47,6 +47,7 @@ export default {
     },
     clickedOutside () {
       this.profileMenu = false
+      this.mobileNav = false
     }
   },
   computed: {
