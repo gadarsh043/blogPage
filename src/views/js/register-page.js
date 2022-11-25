@@ -46,6 +46,7 @@ export default {
               lastName: this.lastName,
               username: this.username,
               email: this.email,
+              password: this.password,
               admin: false
             })
             this.$router.push({ name: 'Home' })
