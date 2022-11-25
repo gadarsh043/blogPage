@@ -21,22 +21,6 @@
     </div>
   </template>
 
-<script>
-import Arrow from '../assets/Icons/arrow-right-light.svg'
-export default {
-  name: 'blogPost',
-  props: ['post'],
-  components: {
-    Arrow
-  },
-  computed: {
-    user () {
-      return this.$store.state.user
-    }
-  }
-}
-</script>
-
   <style lang="scss" scoped>
   .blog-wrapper {
     display: flex;
@@ -152,3 +136,5 @@ export default {
     }
   }
   </style>
+
+<script src="./js/blog-post.js"></script>

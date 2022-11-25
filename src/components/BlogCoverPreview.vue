@@ -7,25 +7,6 @@
     </div>
   </template>
 
-<script>
-import close from '../assets/Icons/times-circle-light.svg'
-export default {
-  components: {
-    close
-  },
-  methods: {
-    closePreview () {
-      this.$store.commit('openPhotoPreview')
-    }
-  },
-  computed: {
-    blogCoverPhoto () {
-      return this.$store.state.blogPhotoFileURL
-    }
-  }
-}
-</script>
-
   <style lang="scss" scoped>
   .modal {
     top: 0;
@@ -70,3 +51,5 @@ export default {
     }
   }
   </style>
+
+<script src="./js/blog-cover-preview.js"></script>
