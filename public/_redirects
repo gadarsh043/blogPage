@@ -1,0 +1,13 @@
+# Redirects from what the browser requests to what we serve
+/home               /
+/blogs              /blogs
+/login              /login
+/register           /register
+/forgot-password    /forgot-password
+/create-admin       /create-admin
+/delete-admin       /delete-admin
+/create-post        /create-post
+/post-preview       /post-preview
+/view-blog/:blogid  /view-blog/:blogid
+/edit-blog/:blogid  /edit-blog/:blogid
+/*                 /
