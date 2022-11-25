@@ -1,4 +1,4 @@
-# Redirects from what the browser requests to what we serve
+<!-- # Redirects from what the browser requests to what we serve
 /home               /
 /blogs              /blogs
 /login              /login
@@ -10,4 +10,4 @@
 /post-preview       /post-preview
 /view-blog/:blogid  /view-blog/:blogid
 /edit-blog/:blogid  /edit-blog/:blogid
-/*                 /
+/*                 / -->
