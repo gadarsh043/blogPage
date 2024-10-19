@@ -1,4 +1,4 @@
-For hands on experience: [here](https://g-akarsh-monu.netlify.app/)
+For hands-on experience: <a href="https://g-akarsh-monu.netlify.app/" target="_blank">Blog Page</a>
 
 # Blogging Application
 
