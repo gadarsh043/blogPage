@@ -52,17 +52,20 @@ After setting up and running the application, users can navigate through the var
 
 blogging-application/
 ├── src/
-│   ├── assets/           # Contains image and icon assets
-│   ├── components/       # Reusable Vue components
-│   ├── firebase/       # Reusable Vue components
-│   ├── router/           # Vue Router for navigation
-│   ├── store/            # Vuex store for state management
-│   ├── views/            # Vue components representing different views
-│   └── App.vue           
-│   └── main.js           
-├── public/               # Static files
-├── .env                  # Environment variables
-└── package.json          # Project metadata and dependencies
+│   ├── assets/              # Contains image and icon assets
+│   ├── components/          # Reusable Vue components
+│   ├── firebase/            # Firebase-related code
+│   ├── router/              # Vue Router for navigation
+│   ├── store/               # Vuex store for state management
+│   ├── views/               # Vue components representing different views
+│   ├── App.vue              # Main App component
+│   └── main.js              # Entry point for Vue
+├── public/                  # Static files
+├── .env                     # Environment variables
+├── .gitignore               # Git ignore file
+├── README.md                # Project documentation
+└── package.json             # Project metadata and dependencies
+
 
 ## How It Works
 
