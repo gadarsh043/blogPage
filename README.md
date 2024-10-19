@@ -1,6 +1,8 @@
+For hands on experience: [https://g-akarsh-monu.netlify.app/](url)
+
 # Blogging Application
 
-Welcome to my blogging application, crafted with care to empower users to create, edit, and manage their blog posts effortlessly. With a user-friendly interface, navigating the various functionalities—like posting, editing, and deleting blogs—feels intuitive and enjoyable. I designed this application specifically for my brother, Akarsh, to make it easier for him to share his thoughts and updates.
+I am happy to introduce you to my page which was developed for the users to create, modify and administrate their blog entries with no sweat. The simple layout contributes to the ease of some of the functions such as the blog posting, deleting or editing. I made this with the intention that my brother "Akarsh" starts using this to express his thoughts.
 
 ## Table of Contents
 
@@ -74,5 +76,4 @@ Blog Management: Authenticated users can create new blog posts, edit existing on
 Admin Functionality: Admin users can manage other users and have access to additional blog management features.
 
 ## Conclusion
-
-This blogging application stands as a robust platform for users to meet their blogging needs. With features like user authentication and responsive design, it provides a seamless experience for everyone. I hope my brother finds it helpful in sharing his journey and thoughts!
+I created this to grow my skills in front-end web application building using Vue.js and firebase. It was very challenging but at the same time – very exciting. It was basically for the purpose of encouraging my brother to put out thoughts on different matters. Thanks to external sources like Stack Overflow and YouTube for concepts😁.
