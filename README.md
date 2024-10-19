@@ -1,4 +1,4 @@
-For hands on experience: [https://g-akarsh-monu.netlify.app/](url)
+For hands on experience: [here](https://g-akarsh-monu.netlify.app/)
 
 # Blogging Application
 
