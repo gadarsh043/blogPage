@@ -1,17 +1,19 @@
+import close from '@/assets/Icons/times-circle-light.svg' // Import close icon
 
-import close from '@/assets/Icons/times-circle-light.svg'
 export default {
   components: {
-    close
+    close // Register close component
   },
   methods: {
+    // Method to close the photo preview
     closePreview () {
-      this.$store.commit('openPhotoPreview')
+      this.$store.commit('openPhotoPreview') // Commit mutation to toggle photo preview state
     }
   },
   computed: {
+    // Computed property to get the blog cover photo URL from the store
     blogCoverPhoto () {
-      return this.$store.state.blogPhotoFileURL
+      return this.$store.state.blogPhotoFileURL // Return the cover photo file URL from state
     }
   }
 }

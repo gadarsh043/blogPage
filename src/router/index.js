@@ -14,14 +14,15 @@ import ErrorPage from '../views/ErrorPage.vue'
 
 Vue.use(VueRouter)
 
+// Define routes for the application
 const routes = [
   {
     path: '/',
     name: 'Home',
     component: Home,
     meta: {
-      title: 'Home',
-      requiresAuth: false
+      title: 'Home', // Page title for SEO
+      requiresAuth: false // No authentication required
     }
   },
   {
@@ -29,8 +30,8 @@ const routes = [
     name: 'Blogs',
     component: Blogs,
     meta: {
-      title: 'Blogs',
-      requiresAuth: false
+      title: 'Blogs', // Page title for SEO
+      requiresAuth: false // No authentication required
     }
   },
   {
@@ -38,8 +39,8 @@ const routes = [
     name: 'Login',
     component: Login,
     meta: {
-      title: 'Login',
-      requiresAuth: false
+      title: 'Login', // Page title for SEO
+      requiresAuth: false // No authentication required
     }
   },
   {
@@ -47,8 +48,8 @@ const routes = [
     name: 'Register',
     component: Register,
     meta: {
-      title: 'Register',
-      requiresAuth: false
+      title: 'Register', // Page title for SEO
+      requiresAuth: false // No authentication required
     }
   },
   {
@@ -56,8 +57,8 @@ const routes = [
     name: 'ForgotPassword',
     component: ForgotPassword,
     meta: {
-      title: 'Forgot Password',
-      requiresAuth: false
+      title: 'Forgot Password', // Page title for SEO
+      requiresAuth: false // No authentication required
     }
   },
   {
@@ -65,8 +66,8 @@ const routes = [
     name: 'CreateAdmin',
     component: Admin,
     meta: {
-      title: 'Create Admin',
-      requiresAuth: false
+      title: 'Create Admin', // Page title for SEO
+      requiresAuth: false // No authentication required
     }
   },
   {
@@ -74,8 +75,8 @@ const routes = [
     name: 'DeleteAdmin',
     component: Admin,
     meta: {
-      title: 'Create Admin',
-      requiresAuth: false
+      title: 'Create Admin', // Page title for SEO (same component as CreateAdmin)
+      requiresAuth: false // No authentication required
     }
   },
   {
@@ -83,8 +84,8 @@ const routes = [
     name: 'CreatePost',
     component: CreatePost,
     meta: {
-      title: 'Create Post',
-      requiresAuth: false
+      title: 'Create Post', // Page title for SEO
+      requiresAuth: false // No authentication required
     }
   },
   {
@@ -92,9 +93,9 @@ const routes = [
     name: 'BlogPreview',
     component: BlogPreview,
     meta: {
-      title: 'Preview Blog Post',
-      requiresAuth: true,
-      requiresAdmin: true
+      title: 'Preview Blog Post', // Page title for SEO
+      requiresAuth: true, // Authentication required
+      requiresAdmin: true // Admin access required
     }
   },
   {
@@ -102,8 +103,8 @@ const routes = [
     name: 'ViewBlog',
     component: ViewBlog,
     meta: {
-      title: 'View Blog Post',
-      requiresAuth: false
+      title: 'View Blog Post', // Page title for SEO
+      requiresAuth: false // No authentication required
     }
   },
   {
@@ -111,32 +112,33 @@ const routes = [
     name: 'EditBlog',
     component: EditBlog,
     meta: {
-      title: 'Edit Blog Post',
-      requiresAuth: true,
-      requiresAdmin: true
+      title: 'Edit Blog Post', // Page title for SEO
+      requiresAuth: true, // Authentication required
+      requiresAdmin: true // Admin access required
     }
   },
   {
-    path: '/*',
+    path: '/*', // Catch-all route for 404 errors
     name: '404 error',
     component: ErrorPage,
     meta: {
-      title: 'Error Page',
-      requiresAuth: false,
-      requiresAdmin: false
+      title: 'Error Page', // Page title for SEO
+      requiresAuth: false, // No authentication required
+      requiresAdmin: false // No admin access required
     }
   }
 ]
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
+  mode: 'history', // Use HTML5 history mode for cleaner URLs
+  base: process.env.BASE_URL, // Base URL from environment variables
+  routes // Define routes
 })
 
+// Global navigation guard to set document title
 router.beforeEach((to, from, next) => {
-  document.title = `${to.meta.title} | Monu's Blog`
-  next()
+  document.title = `${to.meta.title} | Monu's Blog` // Set the document title
+  next() // Proceed to the route
 })
 
-export default router
+export default router // Export the router instance
