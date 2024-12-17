@@ -1,8 +1,8 @@
-For hands-on experience: <a href="https://g-akarsh-monu.netlify.app/" target="_blank">Blog Page</a>
+For hands-on experience: <a href="https://g-adarsh-sonu.netlify.app/" target="_blank">Blog Page</a>
 
 # Blogging Application
 
-I am happy to introduce you to my page which was developed for the users to create, modify and administrate their blog entries with no sweat. The simple layout contributes to the ease of some of the functions such as the blog posting, deleting or editing. I made this with the intention that my brother "Akarsh" starts using this to express his thoughts.
+I am happy to introduce you to my page which was developed for the users to create, modify and administrate their blog entries with no sweat. The simple layout contributes to the ease of some of the functions such as the blog posting, deleting or editing. I made this with the intention to express my thoughts.
 
 ## Table of Contents
 

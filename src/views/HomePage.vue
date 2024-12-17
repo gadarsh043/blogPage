@@ -15,7 +15,7 @@
     <div v-if="!user" class="updates">
       <div class="container">
         <h2>Never miss my update!</h2>
-        <router-link class="router-button" :to="{ name: 'Login' }"> Register to <span class="bold">"Akarsh's Page"</span> <Arrow class="arrow arrow-light" /> </router-link>
+        <router-link class="router-button" :to="{ name: 'Login' }"> Register to <span class="bold">"Adarsh's Page"</span> <Arrow class="arrow arrow-light" /> </router-link>
       </div>
     </div>
   </div>

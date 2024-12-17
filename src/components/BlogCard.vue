@@ -82,7 +82,7 @@
       z-index: 1;
       width: 100%;
       min-height: 200px;
-      object-fit: cover;
+      object-fit: contain;
     }
 
     .info {

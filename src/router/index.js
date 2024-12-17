@@ -137,7 +137,7 @@ const router = new VueRouter({
 
 // Global navigation guard to set document title
 router.beforeEach((to, from, next) => {
-  document.title = `${to.meta.title} | Monu's Blog` // Set the document title
+  document.title = `${to.meta.title} | Adarsh's Blog` // Set the document title
   next() // Proceed to the route
 })
 

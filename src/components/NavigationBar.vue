@@ -2,7 +2,7 @@
   <header>
     <nav class="container">
       <div class="branding">
-        <router-link class="header" :to="{ name : 'Home' }">Akarsh's Page</router-link>
+        <router-link class="header" :to="{ name : 'Home' }">Adarsh's Page</router-link>
       </div>
       <div class="nav-links">
         <ul v-show="!mobile">
